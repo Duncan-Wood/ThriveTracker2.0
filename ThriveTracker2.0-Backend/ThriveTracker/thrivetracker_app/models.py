@@ -1,22 +1,22 @@
+from datetime import date
 from django.db import models
 from django.contrib.auth.models import User
-from datetime import date
 from django.utils import timezone
-
 
 class TimeTracker(models.Model):
     name = models.CharField('TimeTracker Name', max_length=200)
     created_at = models.DateTimeField('Created At', default=timezone.now)
     end_date = models.DateTimeField('End Date', null=True, blank=True)
     # venue = models.ForeignKey(Venue, blank=True, null=True, on_delete=models.CASCADE)
-    thrivetracker_user = models.ForeignKey(User, blank = True, null = True, on_delete=models.SET_NULL)
+    thrivetracker_user = models.ForeignKey(
+        User, blank = True, null = True, on_delete=models.SET_NULL)
     description = models.TextField('Addiction Description', blank=True)
     addiction = models.CharField('Addiction', max_length=200)
     # attendees = models.ManyToManyField(ThriveTrackerUser, blank=True)
     # approved = models.BooleanField('Aprroved', default=False)
 
     def __str__(self):
-        return self.name
+        return str(self.name) if self.name else ""
 
     @property
     def current_streak(self):
