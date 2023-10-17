@@ -5,7 +5,9 @@ Welcome to ThriveTracker, a new way to help you in your addiction recovery. Thri
 
 
 ## FigJam
-- ![board](https://www.figma.com/file/TwIZjrYzcLhl9FOJMbBP3d/ThriveTracker2.0?type=whiteboard&node-id=2%3A113&t=ql6bZ8S3GVMJMgdq-1)
+- ![Figma Planning Board](https://www.figma.com/file/TwIZjrYzcLhl9FOJMbBP3d/ThriveTracker2.0?type=whiteboard&node-id=2%3A113&t=ql6bZ8S3GVMJMgdq-1)
+- ![Figma Design Board](https://www.figma.com/file/Lzxo10ctGP6kT2loANUAwz/ThriveTracker2.0---Design?type=design&node-id=0%3A1&mode=design&t=SFkFrHNSDI7Aiy3w-1)
+
 
 ## Resources
 - ![reframe origin concept](https://coe.gatech.edu/news/2021/04/engineering-alumni-create-mobile-app-reduce-alcohol-abuse)
