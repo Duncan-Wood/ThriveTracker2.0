@@ -11,13 +11,12 @@
       integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
       crossorigin="anonymous"
     />
-    {% comment %} <style>
-      body {background: #f5f5f5;}
-    </style> {% endcomment %}
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}" />
     <title>Thrivetracker 2.0</title>
   </head>
   <body>
-    {% include 'navbar.html' %}
+    {% comment %} {% include 'navbar.html' %} {% endcomment %}
     <br />
     <div class="container">
       {% if messages %} {% for message in messages %}
