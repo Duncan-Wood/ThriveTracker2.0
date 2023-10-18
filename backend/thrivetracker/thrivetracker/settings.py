@@ -124,7 +124,7 @@ STATIC_URL = '/static/'
 # Specify the directories where Django should look for static files.
 # add additional directories here if needed
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "backend/thrivetracker/thrivetracker_app/static"),
+    os.path.join(BASE_DIR, "thrivetracker_app/static"),
 ]
 
 # Define the absolute filesystem path to the directory for collected static files.
