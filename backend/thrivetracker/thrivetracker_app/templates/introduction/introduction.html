@@ -1,14 +1,14 @@
 {% extends 'introduction/base1.html' %} {% block content %}
 <div id="intro-container">
-  <img id="back-arrow" src="static/images/Back-Icon.svg" />
+  {% comment %} <img id="back-arrow" src="static/images/Back-Icon.svg" /> {% endcomment %}
   <div id="intro-wrapper">
     <div id="intro-text">
       <h1>Meet ThriveTracker, the Reframe Clone Drink Tracker!</h1>
       <p>{% lorem 1 b random %}</p>
-      <button id="get-started">GET STARTED</button>
+      <button id="continue-button">Get Started</button>
     </div>
     <div id="reframe-intro-phone-icon">
-      <img src="static/images/Reframe-Intro-Phone-Icon.svg" />
+      <img src="../static/images/Reframe-Intro-Phone-Icon.svg" />
     </div>
   </div>
 </div>
