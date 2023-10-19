@@ -1,24 +1,15 @@
 {% extends 'introduction/base1.html' %} {% block content %}
 <div id="intro-container">
-  <div class="col-md-12">
-    <img id="back-arrow" src="static/images/Back-Icon.svg" />
-    <div class="row-md-12">
-      <div id="intro-text" class="col-md-12">
-        <h1>Meet ThriveTracker, the Reframe Clone Drink Tracker!</h1>
-        <p>{% lorem 1 b random %}</p>
-        <img
-          class="h-50"
-          id="get-started-button"
-          src="static/images/Blue-Button-Icon.svg"
-        />
-      </div>
-      <div>
-        <img
-          id="reframe-intro-phone-icon"
-          src="static/images/Reframe-Intro-Phone-Icon.svg"
-        />
-      </div>
+  <img id="back-arrow" src="static/images/Back-Icon.svg" />
+  <div id="intro-wrapper">
+    <div id="intro-text">
+      <h1>Meet ThriveTracker, the Reframe Clone Drink Tracker!</h1>
+      <p>{% lorem 1 b random %}</p>
+      <button id="get-started">GET STARTED</button>
+    </div>
+    <div id="reframe-intro-phone-icon">
+      <img src="static/images/Reframe-Intro-Phone-Icon.svg" />
     </div>
   </div>
-
-  {% endblock %}
+</div>
+{% endblock %}
