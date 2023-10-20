@@ -1,11 +1,10 @@
-{% extends 'introduction/base1.html' %} {% block content %}
+{% extends 'introduction/intro-base.html' %} {% block content %}
 <div id="intro-container">
-  {% comment %} <img id="back-arrow" src="static/images/Back-Icon.svg" /> {% endcomment %}
   <div id="intro-wrapper">
     <div id="intro-text">
       <h1>Meet ThriveTracker, the Reframe Clone Drink Tracker!</h1>
       <p>{% lorem 1 b random %}</p>
-      <button id="continue-button">Get Started</button>
+      <button class="continue-button">Get Started</button>
     </div>
     <div id="reframe-intro-phone-icon">
       <img src="../static/images/Reframe-Intro-Phone-Icon.svg" />

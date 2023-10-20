@@ -1,41 +1,135 @@
-#container {
-    height: 100vh;
+body {
+  background-image: url("/static/images/Intro-Background-Icon.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
-body {
-    background-image: url('/static/images/Intro-Background-Icon.svg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;;
-}
 #back-arrow {
     position: relative;
     padding-bottom: 5rem;
-}
-#intro-wrapper {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1.25rem; 
   }
-  
-#intro-text {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
 
-#get-started {
+.continue-button {
     border: none;
     border-radius: 20px;
     color: white;
-    background-color: #213188; 
-    padding: 10px 20px; 
+    background-color: #213188;
+    padding: 10px 20px;
+    margin-top: 2rem;
+    width: 80%;
+  }
+
+  
+/* Introduction Page */
+
+
+#intro-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  text-align: center;
+}
+
+#intro-text {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 
 #reframe-intro-phone-icon {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: auto;
+}
+
+/* Let's Start Personalizing */
+#calendar-icon img {
+  max-width: 100%; /* Allow the image to shrink to fit its container */
+  height: auto; /* Maintain the aspect ratio */
+}
+
+/* Weekly Drink Count */
+.subtle-text {
+  color: #b4b4b6;
+}
+
+#weekly-count-wrapper {
+  text-align: center;
+}
+
+#weekly-count-days {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.day {
+  flex: 1;
+  text-align: center;
+  font-weight: bold;
+  padding: 10px;
+  font-size: 1.5rem;
+}
+
+.current-day {
+  color: #213188;
+}
+
+.highlight-text {
+  color: #213188;
+}
+
+#aside {
+  font-size: 1.5rem;
+}
+
+#weekly-count-counter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+}
+
+#weekly-count-number {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#minus,
+#plus {
+  width: 75px; /* Adjust the width of the plus and minus icons as needed */
+}
+
+#weekly-count-counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#weekly-count-minus,
+#weekly-count-plus,
+#weekly-count-number {
+  padding: 10px; /* Add padding for spacing */
+}
+
+#big-number {
+  font-size: 3rem; /* Adjust the font size as needed */
+}
+
+#weekly-count-number {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

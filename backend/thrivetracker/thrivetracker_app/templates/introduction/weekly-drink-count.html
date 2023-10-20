@@ -1,0 +1,105 @@
+{% extends 'introduction/intro-base.html' %} {% block content %}
+<div id="intro-container">
+  <img class="back-arrow" src="../static/images/Back-Icon.svg" />
+  <div id="weekly-count-wrapper">
+    <div id="weekly-count-days">
+      {%for day in days %}
+      <div class="day subtle-text">{{ day|slice:":1" }}</div>
+      {% endfor %}
+    </div>
+    <div id="weekly-count-text">
+      <h1>
+        On a typical <span class="highlight-text">{{ current_day }}</span>, how
+        many drinks do you usually have?
+      </h1>
+      <p id="aside" class="subtle-text">
+        reply 0 if you normally don't drink on {{ current_day }}.
+      </p>
+    </div>
+    <div id="weekly-count-counter">
+      <div class="count-column">
+        <div id="weekly-count-minus">
+          <img id="minus" src="../static/images/Minus-Icon.svg" />
+        </div>
+      </div>
+      <div class="count-column">
+        <div id="weekly-count-number">
+          <h3 id="big-number">{{ count }}</h3>
+          <p id="aside" class="subtle-text">drinks</p>
+        </div>
+      </div>
+      <div class="count-column">
+        <div id="weekly-count-plus">
+          <img id="plus" src="../static/images/Plus-Icon.svg" />
+        </div>
+      </div>
+    </div>
+    {% if current_day != "Sunday" %}
+    <button id="next-button" class="continue-button">Next</button>
+    {% else %}
+    <button class="continue-button">Continue</button>
+    {% endif %}
+  </div>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    let countElement = document.getElementById('big-number');
+    let currentDayElements = document.querySelectorAll('.day');
+    let count = {{ count }};
+    let currentDayText = document.querySelector('.highlight-text'); // Select the current_day text element
+
+    let plusButton = document.getElementById('weekly-count-plus');
+    let minusButton = document.getElementById('weekly-count-minus');
+    let nextButton = document.getElementById('next-button');
+
+    // Retrieve currentDay and days from the Django context
+    let currentDay = "{{ current_day }}";
+    let days = {{ days|safe }};
+
+    plusButton.addEventListener('click', function() {
+      count = Math.max(count + 1, 0);
+      countElement.innerText = count;
+    });
+
+    minusButton.addEventListener('click', function() {
+      count = Math.max(count - 1, 0);
+      countElement.innerText = count;
+    });
+
+    function highlightCurrentDay() {
+      // Iterate through all the day elements
+      currentDayElements.forEach((dayElement, index) => {
+        let dayName = days[index]; // Get the day name corresponding to the index
+        if (dayName === currentDay) {
+          dayElement.classList.add('current-day'); // Add the class "current-day" to the selected day
+        } else {
+          dayElement.classList.remove('current-day'); // Remove the class "current-day" from other days
+        }
+      });
+      // Update the current_day text
+      currentDayText.innerText = currentDay;
+    }
+
+    // Call the function to initially highlight the current day
+    highlightCurrentDay();
+
+    nextButton.addEventListener('click', function() {
+      let currentIndex = days.indexOf(currentDay);
+
+      // Increment the index and wrap around to 0 if it's Sunday
+      currentIndex = (currentIndex + 1) % days.length;
+
+      // Update the current day
+      currentDay = days[currentIndex];
+
+      // Call the function to highlight the new current day and update the text
+      highlightCurrentDay();
+
+      // You can also reset the count to 0 when the day changes
+      count = 0;
+      countElement.innerText = count;
+    });
+  });
+</script>
+
+{% endblock %}
