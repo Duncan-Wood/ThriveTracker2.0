@@ -1,0 +1,32 @@
+{% extends 'introduction/intro-base.html' %} {% block content %}
+<div>
+  <img class="back-arrow" src="../static/images/Back-Icon.svg" />
+  <div id="intro-text">
+    <h1>
+      Based on your answers, here's what a typical week looks like for you
+    </h1>
+    <div id="weekly-breakdown">
+      <div id="dry-days-container">
+        <img class="typical-week-icon" src="../static/images/Coffee-Icon.svg" />
+        <h5>Dry days per week</h5>
+        {%if dry_days > 1 or dry_days == 0%}
+        <h3>{{ dry_days }} days</h3>
+        {%else%}
+        <h3>{{ dry_days }} day</h3>
+        {%endif%}
+      </div>
+      <div id="drinking-days-container">
+        <img class="typical-week-icon" src="../static/images/Wine-Icon.svg" />
+        <h5>Total drinks per week</h5>
+        {%if drinks_per_week > 1 or drinks_per_week == 0%}
+        <h3>{{ drinks_per_week }} drinks</h3>
+        {%else%}
+        <h3>{{ drinks_per_week }} drink</h3>
+        {%endif%}
+      </div>
+    </div>
+    <button class="continue-button">Set Target</button>
+  </div>
+</div>
+
+{% endblock %}
