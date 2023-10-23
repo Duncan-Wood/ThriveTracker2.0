@@ -1,0 +1,59 @@
+{% extends 'introduction/intro-base.html' %} {% block content %}
+<div>
+  <img class="back-arrow" src="../static/images/Back-Icon.svg" />
+  <h1 class="intro-header">We recommend bringing your weekly total down to about {{ recommended_count }} drinks initially!</h1>
+  <div class="typical-week-container">
+    <h6 id="drink-recommendation-text"> <span class="highlight-text">{{ count }}</span> Drinks</h6>
+  </div>
+  <img class="down-arrow" src="../static/images/Down-Icon.svg" />
+    <div id="weekly-count-counter">
+      <div class="count-column">
+        <div id="weekly-count-minus">
+          <img id="minus" src="../static/images/Minus-Icon.svg" data-action="decrement" />
+        </div>
+      </div>
+      <div class="count-column">
+        <div class="typical-week-container">
+          <h6 id="drink-recommendation-text"> <span class="highlight-text">{{ recommended_count }}</span> Drinks</h6>
+        </div>
+      </div>
+      <div class="count-column">
+        <div id="weekly-count-plus">
+          <img id="plus" src="../static/images/Plus-Icon.svg" data-action="increment" />
+        </div>
+      </div>
+    </div>
+    <h6 class="subtle-text"> Recommendation: {{ recommended_count }} Drinks</h6>
+    <button class="continue-button">Sounds Good - Let's Make A Plan </button>
+  </div>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    let recommended_countElement = document.querySelector('#weekly-count-counter .highlight-text');
+    let recommended_count = {{ recommended_count }};
+    let max_count = {{ count }};
+    let plusButtons = document.querySelectorAll('[data-action="increment"]');
+    let minusButtons = document.querySelectorAll('[data-action="decrement"]');
+
+    plusButtons.forEach(plusButton => {
+      plusButton.addEventListener('click', function() {
+      if (recommended_count < max_count-1) {
+        plusButton.classList.remove('disabled');
+          recommended_count = Math.max(recommended_count + 1, 0);
+          recommended_countElement.innerText = recommended_count;
+      } else {
+        plusButton.classList.add('disabled');
+      }
+      });
+    });
+
+    minusButtons.forEach(minusButton => {
+      minusButton.addEventListener('click', function() {
+        recommended_count = Math.max(recommended_count - 1, 0);
+        recommended_countElement.innerText = recommended_count;
+      });
+    });
+  });
+</script>
+
+{% endblock %}

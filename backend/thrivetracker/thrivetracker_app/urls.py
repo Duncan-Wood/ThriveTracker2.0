@@ -1,3 +1,4 @@
+""" URL Configuration for thrivetracker_app """""
 from django.urls import path
 from . import views
 
@@ -9,5 +10,6 @@ urlpatterns = [
          name='weekly-drink-count'),
     path('typical-week/', views.typical_week,
          name='typical-week'),
-
+    path('drink-recommendation/', views.drink_recommendation,
+         name='drink-recommendation'),
 ]
