@@ -5,44 +5,52 @@ body {
   background-attachment: fixed;
 }
 
-#back-arrow {
-    position: relative;
-    padding-bottom: 5rem;
-  }
+.container {
+  height: 85vh;
+  display: flex;
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  margin: 0 auto;
+}
+
+.back-arrow {
+  position: relative;
+  top: -5rem;
+}
+
+.intro-header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+}
+
+.reframe-intro-big-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: auto;
+}
 
 .continue-button {
-    border: none;
-    border-radius: 20px;
-    color: white;
-    background-color: #213188;
-    padding: 10px 20px;
-    margin-top: 2rem;
-    width: 80%;
-  }
+  border: none;
+  border-radius: 20px;
+  color: white;
+  background-color: #213188;
+  padding: 10px 20px;
+  width: 100%;
+  margin: 2rem auto;
+}
 
-  
 /* Introduction Page */
-
 
 #intro-wrapper {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.25rem;
   text-align: center;
-}
-
-#intro-text {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-
-#reframe-intro-phone-icon {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: auto;
+  margin: 2rem auto;
+  align-items: center;
 }
 
 /* Let's Start Personalizing */
@@ -132,4 +140,33 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+/* Typical Week */
+
+#weekly-breakdown {
+  display: flex;
+  justify-content: space-between;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.typical-week-container {
+  flex: 1;
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.typical-week-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.typical-week-text {
+  margin: 10px;
 }
